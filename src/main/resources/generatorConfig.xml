@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <!-- 这个原理是xml特有的吗 读取resource文件 -->
+    <!-- 这个原理是xml特有的吗??? 读取resource文件 -->
     <properties resource="generator.properties"/>
     <context id="MySqlContext" targetRuntime="MyBatis3" defaultModelType="flat">
         <!-- 这个是自定义的，但不清楚有什么作用 -->
@@ -16,7 +16,7 @@
         <!-- 为生成的Java模型创建一个toString方法 -->
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
         <!--可以自定义生成model的代码注释-->
-        <commentGenerator type="com.macro.mall.tiny.mbg.CommentGenerator">
+        <commentGenerator type="com.example.zzmalllearning.mbg.CommentGenerator">
             <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="suppressAllComments" value="true"/>
             <property name="suppressDate" value="true"/>
@@ -31,12 +31,12 @@
             <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
         <!--指定生成model的路径-->
-        <javaModelGenerator targetPackage="com.example.zzmalllearning.mbg.model" targetProject="\src\main\java"/>
+        <javaModelGenerator targetPackage="com.example.zzmalllearning.mbg.model" targetProject="\zz-mall-learning\src\main\java"/>
         <!--指定生成mapper.xml的路径-->
-        <sqlMapGenerator targetPackage="com.example.zzmalllearning.mbg.mapper" targetProject="\src\main\resources"/>
+        <sqlMapGenerator targetPackage="com.example.zzmalllearning.mbg.mapper" targetProject="\zz-mall-learning\src\main\resources"/>
         <!--指定生成mapper接口的的路径-->
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.zzmalllearning.mbg.mapper"
-                             targetProject="\src\main\java"/>
+                             targetProject="\zz-mall-learning\src\main\java"/>
         <!--生成全部表tableName设为%-->
         <table tableName="pms_brand">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>

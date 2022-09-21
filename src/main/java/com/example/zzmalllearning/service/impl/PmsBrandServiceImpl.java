@@ -3,6 +3,7 @@ package com.example.zzmalllearning.service.impl;
 import com.example.zzmalllearning.service.PmsBrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/*
 public class PmsBrandServiceImpl implements PmsBrandService {
     @Autowired
     private PmsBrandMapper brandMapper;
@@ -38,3 +39,4 @@ public class PmsBrandServiceImpl implements PmsBrandService {
         return null;
     }
 }
+*/

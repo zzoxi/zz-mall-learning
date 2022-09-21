@@ -1,6 +1,7 @@
 package com.example.zzmalllearning.service;
 
 public interface PmsBrandService {
+    /*
     List<PmsBrand> listAllBrand();
 
     int createBrand(PmsBrand brand);
@@ -12,4 +13,5 @@ public interface PmsBrandService {
     List<PmsBrand> listBrand(int pageNum, int pageSize);
 
     PmsBrand getBrand(Long id);
+     */
 }

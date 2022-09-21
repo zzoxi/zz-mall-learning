@@ -32,16 +32,14 @@ public class CommonResult<T> {
      * 成功返回结果，可自定义消息
      */
     public static <T> CommonResult<T> success(T data, String message) {
-        return new CommonResult<T>(ResultCode.SUCCESS.getCode(), message, data)
+        return new CommonResult<T>(ResultCode.SUCCESS.getCode(), message, data);
     }
 
 
 
     /**
-     *
+     * 失败返回结果
      * @param errorCode
-     * @return
-     * @param <T>
      * 这里参数是IErrorCode接口类型 可能是传入一个实现类对象
      */
     public static <T> CommonResult<T> failed(IErrorCode errorCode) {
@@ -50,20 +48,42 @@ public class CommonResult<T> {
 
 
     /**
-     * 操作失败返回姐u哦
+     * 操作失败返回结果，自定义消息
      * @param message
-     * @return
-     * @param <T>
      */
     public static <T> CommonResult<T> failed(String message) {
-        return new CommonResult<T>(ResultCode.FAILED.getCode(), )
+        return new CommonResult<T>(ResultCode.FAILED.getCode(), message, null);
     }
 
-    //参数验证失败
+    public static <T> CommonResult<T> failed() { return failed(ResultCode.FAILED); }
+
+    /**
+     * 参数验证失败
+     */
+    public static <T> CommonResult<T> validateFailed() {
+        return failed(ResultCode.VALIDATE_FAILED);
+    }
+
+    /**
+     * 参数验证失败  自定义消息
+     */
     public static <T> CommonResult<T> validateFailed(String message) {
-        return new CommonResult<T>()
+        return new CommonResult<T>(ResultCode.VALIDATE_FAILED.getCode(), message, null);
     }
 
+    /**
+     * 未登录错误，携带 T data
+     */
+    public static <T> CommonResult<T> unauthorized(T data) {
+        return new CommonResult<T>(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
+    }
+
+    /**
+     * 未授权错误，携带 T data
+     */
+    public static <T> CommonResult<T> forbidden(T data) {
+        return new CommonResult<T>(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);
+    }
 
 
     public long getCode() {

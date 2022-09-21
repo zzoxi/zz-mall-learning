@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration;
  * 创建于2022/9/16
  */
 @Configuration
-@MapperScan("")
+@MapperScan("com/example/zzmalllearning/mbg/mapper")
 public class MyBatisConfig {
 }
